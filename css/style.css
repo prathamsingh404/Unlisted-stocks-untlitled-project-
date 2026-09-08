@@ -271,4 +271,57 @@ body {
 }
 
 .user-profile-pill:hover {
-  border-color
+  border-color: var(--obsidian);
+}
+
+.user-avatar-circle {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #1E293B;
+  color: var(--accent-lime);
+  font-weight: 700;
+  font-size: 0.8125rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--accent-lime);
+}
+
+.user-meta-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.user-name {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.user-role-label {
+  font-size: 0.6875rem;
+  color: var(--text-muted);
+}
+
+/* Page Views Routing */
+.page-view {
+  display: none;
+}
+
+.page-view.active {
+  display: block;
+}
+
+/* ==========================================================================
+   PAGE 1: Stocks Dashboard & Catalog
+   ========================================================================== */
+.platform-subheader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 40px;
+  margin-bottom: 36px;
+  gap: 24px;
+  fle
