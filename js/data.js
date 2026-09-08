@@ -227,5 +227,95 @@ const UNLISTED_STOCKS = [
     name: "National Stock Exchange of India (NSE)",
     shortName: "National Stock Exchange",
     symbol: "NSE",
-    secto
+    sector: "Exchange",
+    category: "upcoming",
+    priceRange: "₹6,800 - ₹6,850",
+    price: 6850,
+    minUnits: 10,
+    marketCap: "₹3,39,075 Cr",
+    peRatio: "38.40",
+    isin: "INE118A01012",
+    faceValue: "₹1",
+    eps: "₹167.8",
+    pbRatio: "12.8",
+    bookValue: "₹535.20",
+    debtEquity: "0",
+    settlementPeriod: "T+1 Demat",
+    upcomingIPO: "DRHP in Preparation 2025",
+    description: "India's largest derivatives and equity cash stock exchange with an indisputable monopoly position in Indian financial infrastructure.",
+    logoText: "NSE",
+    logoColor: "#1E3A8A",
+    logoBorder: "#1E3A8A",
+    logoTextColor: "#FFFFFF",
+    priceChange1Y: "+3,100.00 (82.66%) 1 Y",
+    tag: "Market Monopoly",
+    financialYears: ["FY2024", "FY2023", "FY2022"],
+    profitAndLoss: [
+      { metric: "Revenue from Operations", vals: ["14,780", "11,850", "8,280"] },
+      { metric: "Operating Profit", vals: ["10,650", "8,420", "5,890"] },
+      { metric: "Profit After Tax", vals: ["8,306", "7,356", "5,198"] }
+    ],
+    balanceSheet: [
+      { metric: "Total Equity", vals: ["24,500", "19,200", "14,800"] },
+      { metric: "Total Assets", vals: ["48,200", "39,100", "29,400"] }
+    ],
+    shareholding: [{ holder: "State Bank of India & LIC", percent: 22.5 }, { holder: "Temasek & Foreign Pension Funds", percent: 28.0 }, { holder: "Public & Domestic Institutions", percent: 49.5 }],
+    strengths: [{ title: "Global Derivatives Leader", desc: "No. 1 derivative exchange in contracts traded globally for 5 straight years." }],
+    weaknesses: [{ title: "Regulatory Overhang", desc: "SEBI approval timelines for IPO listing pending co-location clearance." }],
+    boardOfDirectors: [{ name: "Ashishkumar Chauhan", role: "MD & CEO" }],
+    seniorManagement: [{ name: "Yatrik Vin", role: "Group CFO" }],
+    faqs: [
+      { question: "When is NSE expected to list?", answer: "NSE is working actively towards resolution with SEBI for IPO filing in FY2025-26." }
+    ]
+  },
+  {
+    id: "hdbfs",
+    name: "HDB Financial Services Ltd",
+    shortName: "HDB Financial Services",
+    symbol: "HDB",
+    sector: "NBFC",
+    category: "upcoming",
+    priceRange: "₹930 - ₹940",
+    price: 940,
+    minUnits: 50,
+    marketCap: "₹74,800 Cr",
+    peRatio: "29.50",
+    isin: "INE756I01020",
+    faceValue: "₹10",
+    eps: "₹31.10",
+    pbRatio: "5.1",
+    bookValue: "₹184.30",
+    debtEquity: "4.2",
+    settlementPeriod: "T+1 Demat",
+    upcomingIPO: "DRHP Filed for ₹10,000 Cr IPO",
+    description: "HDFC Bank's retail and MSME lending subsidiary operating 1,600+ branches across India. Filed DRHP for ₹10,000 Cr mega IPO.",
+    logoText: "HDB",
+    logoColor: "#0369A1",
+    logoBorder: "#0369A1",
+    logoTextColor: "#FFFFFF",
+    priceChange1Y: "+280.00 (42.42%) 1 Y",
+    tag: "HDFC Group",
+    financialYears: ["FY2024", "FY2023", "FY2022"],
+    profitAndLoss: [
+      { metric: "Revenue from Operations", vals: ["14,171", "12,403", "11,306"] },
+      { metric: "Operating Profit", vals: ["5,210", "4,320", "3,810"] },
+      { metric: "Profit After Tax", vals: ["2,461", "1,959", "1,011"] }
+    ],
+    balanceSheet: [
+      { metric: "Total Equity", vals: ["13,800", "11,400", "9,800"] },
+      { metric: "Total Assets", vals: ["84,200", "72,100", "61,500"] }
+    ],
+    shareholding: [{ holder: "HDFC Bank Ltd", percent: 94.6 }, { holder: "Public & Employee Trust", percent: 5.4 }],
+    strengths: [{ title: "HDFC Bank Parentage", desc: "Best-in-class cost of funds and access to parent bank distribution channels." }],
+    weaknesses: [{ title: "Unsecured Personal Loans", desc: "Sensitivity to macroeconomic credit cycles in unsecured book." }],
+    boardOfDirectors: [{ name: "G. Ramesh", role: "MD & CEO" }],
+    seniorManagement: [{ name: "Haren Parekh", role: "CFO" }],
+    faqs: [
+      { question: "Has HDB Financial filed DRHP?", answer: "Yes, HDB Financial has formally filed its Draft Red Herring Prospectus (DRHP) for an IPO." }
+    ]
+  }
 ];
+
+if (typeof module !== "undefined" && module.exports) {
+  module.exports = { UNLISTED_STOCKS };
+}
