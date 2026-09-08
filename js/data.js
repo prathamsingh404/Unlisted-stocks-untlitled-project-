@@ -81,5 +81,13 @@ const UNLISTED_STOCKS = [
 
     // Strengths & Weaknesses
     strengths: [
-      { title: "Technological Infrastructure", desc: "Fault-tolerant trading systems with real-time data replication across primary, near, and disaster recovery sites ensure high 
+      { title: "Technological Infrastructure", desc: "Fault-tolerant trading systems with real-time data replication across primary, near, and disaster recovery sites ensure high availability and security. Compliance with SEBI's cyber security framework and certifications like ISO/IEC 27001:2013 and ISO 9001:2015." },
+      { title: "Product Diversity", desc: "Offers trading in multiple asset classes such as currency derivatives, equity cash and F&O segments, sovereign gold bonds, and ETFs. Niche indices like SX40 and SXBANK cater to sector-specific performance tracking." },
+      { title: "Educational Initiatives", desc: "Financial literacy programs targeting under-represented communities and events like the 'Millennials and Responsible Investing' symposium help build investor confidence and engagement." },
+      { title: "Regulatory Compliance", desc: "Recognized and regulated by SEBI, ensuring credibility, auditability, and operational transparency." }
+    ],
+    weaknesses: [
+      { title: "Financial Losses", desc: "Decrease in revenue and continued operational losses. Dependence on limited revenue streams like transaction and listing fees, which have been declining." },
+      { title: "Market Share Challenges", desc: "Struggles to establish significant market presence amidst fierce competition from NSE and BSE." },
+      { title: "Brand Visibility", d
 ];
