@@ -458,5 +458,125 @@
 
   function updateWidgetValues() {
     const stock = state.currentDetailStock || state.stocks[0];
-    const units = state.widgetUn
+    const units = state.widgetUnits;
+    const total = units * stock.price;
+
+    document.getElementById('widget-units-count').textContent = units;
+    document.getElementById('widget-final-amount').textContent = `₹${total.toLocaleString('en-IN', { maximumFractionDigits: 0 })}`;
+  }
+
+  // =========================================================================
+  // Interactive Chart Timeframes & Scroll
+  // =========================================================================
+  window.setTimeframe = function (tf) {
+    document.querySelectorAll('.timeframe-pill').forEach(pill => {
+      pill.classList.toggle('active', pill.textContent.trim() === tf);
+    });
+
+    const areaPath = document.getElementById('chart-area-path');
+    const linePath = document.getElementById('chart-line-path');
+
+    if (tf === '1M') {
+      areaPath.setAttribute('d', 'M 20 160 Q 150 140, 300 120 Q 450 110, 680 100 L 680 230 L 20 230 Z');
+      linePath.setAttribute('d', 'M 20 160 Q 150 140, 300 120 Q 450 110, 680 100');
+    } else if (tf === '3M') {
+      areaPath.setAttribute('d', 'M 20 190 Q 150 170, 350 130 Q 500 90, 680 105 L 680 230 L 20 230 Z');
+      linePath.setAttribute('d', 'M 20 190 Q 150 170, 350 130 Q 500 90, 680 105');
+    } else {
+      areaPath.setAttribute('d', 'M 20 180 Q 80 185, 140 195 Q 200 205, 230 180 Q 260 110, 280 80 Q 310 95, 340 120 Q 370 145, 400 135 Q 430 75, 450 78 Q 480 85, 520 95 Q 560 100, 600 102 Q 640 105, 680 108 L 680 230 L 20 230 Z');
+      linePath.setAttribute('d', 'M 20 180 Q 80 185, 140 195 Q 200 205, 230 180 Q 260 110, 280 80 Q 310 95, 340 120 Q 370 145, 400 135 Q 430 75, 450 78 Q 480 85, 520 95 Q 560 100, 600 102 Q 640 105, 680 108');
+    }
+  };
+
+  window.scrollToSection = function (sectionId) {
+    document.querySelectorAll('.section-nav-link').forEach(btn => {
+      btn.classList.toggle('active', btn.getAttribute('onclick').includes(sectionId));
+    });
+
+    const target = document.getElementById(sectionId);
+    if (target) {
+      const topOffset = target.getBoundingClientRect().top + window.pageYOffset - 120;
+      window.scrollTo({ top: topOffset, behavior: 'smooth' });
+    }
+  };
+
+  // =========================================================================
+  // Enquiry Modal
+  // =========================================================================
+  function setupModal() {
+    window.openEnquiry = function (stockId) {
+      let stock = state.stocks.find(s => s.id === stockId);
+      if (!stock) stock = state.currentDetailStock || state.stocks[0];
+
+      state.selectedStock = stock;
+      el.modalStockName.textContent = stock.name;
+      el.modalStockPrice.textContent = `${stock.priceRange} • Min Units: ${stock.minUnits}`;
+      el.modalQty.value = state.widgetUnits || stock.minUnits;
+      el.modalQty.min = stock.minUnits;
+      el.modalQty.step = stock.minUnits;
+
+      el.modalOverlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    };
+
+    window.closeEnquiry = function () {
+      el.modalOverlay.classList.remove('open');
+      document.body.style.overflow = '';
+    };
+
+    if (el.modalCloseBtn) el.modalCloseBtn.addEventListener('click', window.closeEnquiry);
+    if (el.modalOverlay) {
+      el.modalOverlay.addEventListener('click', (e) => {
+        if (e.target === el.modalOverlay) window.closeEnquiry();
+      });
+    }
+
+    if (el.enquiryForm) {
+      el.enquiryForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const stockName = state.selectedStock ? state.selectedStock.name : 'Unlisted Stock';
+        const qty = el.modalQty.value;
+        const phone = document.getElementById('enquiry-phone').value;
+
+        window.closeEnquiry();
+        showToast(`Enquiry submitted for ${qty} units of ${stockName}! We will reach out to ${phone}.`);
+      });
+    }
+  }
+
+  // =========================================================================
+  // FAQ Collapsible
+  // =========================================================================
+  function setupFAQ() {
+    document.querySelectorAll('.faq-card-trigger').forEach(trigger => {
+      trigger.addEventListener('click', () => {
+        const item = trigger.closest('.faq-card-item');
+        item.classList.toggle('active');
+      });
+    });
+  }
+
+  // Toast
+  function showToast(msg) {
+    let toast = document.querySelector('.toast');
+    if (!toast) {
+      toast = document.createElement('div');
+      toast.className = 'toast';
+      document.body.appendChild(toast);
+    }
+    toast.textContent = msg;
+    toast.classList.add('show');
+    setTimeout(() => {
+      toast.classList.remove('show');
+    }, 4000);
+  }
+
+  window.switchTab = switchTab;
+  window.showToast = showToast;
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
 })();
