@@ -113,5 +113,56 @@ const UNLISTED_STOCKS = [
     faqs: [
       {
         question: "Is there any lock in period for MSEI unlisted shares?",
-        answer: "The lock-in period for Metropolitan Stock Exchange of India Ltd Unlisted Shares differs based on investor category under SEBI regulations:\n• Venture Capital Funds (VCFs) and FVCIs: 6 months from date of acquisition.\n• Alternative Invest
+        answer: "The lock-in period for Metropolitan Stock Exchange of India Ltd Unlisted Shares differs based on investor category under SEBI regulations:\n• Venture Capital Funds (VCFs) and FVCIs: 6 months from date of acquisition.\n• Alternative Investment Funds – Category II (AIF-II): No lock-in period applicable.\n• Other investors (including retail investors and HNIs): A lock-in period of 6 months from the date of official IPO listing of Metropolitan Stock Exchange of India Ltd (reduced from 1 year by SEBI in August 2021 to improve liquidity)."
+      },
+      {
+        question: "How much long term capital gains tax do I have to pay on MSEI unlisted shares?",
+        answer: "Long-Term Capital Gains (LTCG) arise when unlisted shares are held for more than 24 months before being sold. Under the Union Budget 2024, for transfers made on or after 23rd July 2024, LTCG on unlisted shares is taxed at a flat rate of 12.5% without indexation benefits."
+      },
+      {
+        question: "How do I start investing in MSEI unlisted shares through QorTrade?",
+        answer: "Step 1: Sign up and complete your simple digital KYC (PAN, Aadhaar, bank and Demat details).\nStep 2: Select Metropolitan Stock Exchange of India Ltd from our list and place your order.\nStep 3: Transfer funds to the verified bank escrow account; upon verified settlement, shares are credited directly to your CDSL or NSDL Demat account."
+      },
+      {
+        question: "What documents are needed to invest in MSEI unlisted shares?",
+        answer: "To invest in Metropolitan Stock Exchange of India Ltd unlisted shares, you need: PAN Card, Aadhaar Card, active Bank account details, and Client Master List (CML) / Demat account details."
+      }
+    ]
+  },
+  {
+    id: "hindon-mercantile",
+    name: "Hindon Mercantile Ltd.",
+    shortName: "Hindon Mercantile Ltd.",
+    symbol: "HML",
+    sector: "NBFC",
+    category: "live",
+    priceRange: "₹800",
+    price: 800,
+    minUnits: 5,
+    marketCap: "₹1,183.41 Cr",
+    peRatio: "98.64",
+    isin: "INE003H01014",
+    faceValue: "₹10",
+    eps: "₹8.11",
+    pbRatio: "4.2",
+    bookValue: "₹190.50",
+    debtEquity: "1.8",
+    settlementPeriod: "T+1 Demat",
+    upcomingIPO: "Upcoming Growth",
+    description: "Hindon Mercantile Limited (HML), incorporated in 1985, is an RBI registered non-banking financial institution focusing on commercial financing and MSME loans.",
+    logoText: "HML",
+    logoColor: "#FFFFFF",
+    logoBorder: "#E5E7EB",
+    logoTextColor: "#059669",
+    priceChange1Y: "+180.00 (29.03%) 1 Y",
+    tag: "High Growth",
+    financialYears: ["FY2024", "FY2023", "FY2022"],
+    profitAndLoss: [
+      { metric: "Revenue from Operations", vals: ["142.50", "98.20", "74.10"] },
+      { metric: "Operating Profit", vals: ["38.40", "26.10", "18.50"] },
+      { metric: "Profit After Tax", vals: ["24.60", "16.80", "11.20"] }
+    ],
+    balanceSheet: [
+      { metric: "Total Equity", vals: ["280.40", "210.10", "165.20"] },
+      { metric: "Total Assets", vals: ["1,183.41", "890.50", "640.20"] 
 ];
