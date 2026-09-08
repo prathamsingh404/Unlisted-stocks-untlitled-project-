@@ -304,5 +304,80 @@
 
       legendContainer.innerHTML = stock.shareholding.map((s, idx) => `
         <div class="legend-item">
-          <span class="legend-color-dot" style="background: ${idx === 0 ? '#111827' : '#B8F228'}
+          <span class="legend-color-dot" style="background: ${idx === 0 ? '#111827' : '#B8F228'}; border: 1px solid var(--border-card);"></span>
+          <span><strong>${s.holder}</strong> (${s.percent}%)</span>
+        </div>
+      `).join('');
+    } else {
+      barContainer.innerHTML = `<div style="width: 100%; background: #111827;"></div>`;
+      legendContainer.innerHTML = `<div class="legend-item"><span>100% Institutional & Public</span></div>`;
+    }
+
+    // Strengths & Weaknesses
+    const strengthsList = document.getElementById('detail-strengths-list');
+    const weaknessesList = document.getElementById('detail-weaknesses-list');
+
+    if (stock.strengths && stock.strengths.length) {
+      strengthsList.innerHTML = stock.strengths.map(s => `
+        <div class="swot-entry">
+          <div class="swot-entry-title">${s.title}</div>
+          <div class="swot-entry-desc">${s.desc}</div>
+        </div>
+      `).join('');
+    } else {
+      strengthsList.innerHTML = `<div class="swot-entry"><div class="swot-entry-desc">Established institutional governance and verified SEBI compliance.</div></div>`;
+    }
+
+    if (stock.weaknesses && stock.weaknesses.length) {
+      weaknessesList.innerHTML = stock.weaknesses.map(w => `
+        <div class="swot-entry">
+          <div class="swot-entry-title">${w.title}</div>
+          <div class="swot-entry-desc">${w.desc}</div>
+        </div>
+      `).join('');
+    } else {
+      weaknessesList.innerHTML = `<div class="swot-entry"><div class="swot-entry-desc">Liquidity subject to unlisted secondary market transaction volumes.</div></div>`;
+    }
+
+    // About & Leadership
+    document.getElementById('detail-about-heading').textContent = `About ${stock.name}`;
+    document.getElementById('detail-about-text').textContent = stock.description;
+
+    const boardGrid = document.getElementById('detail-board-grid');
+    const mgmtGrid = document.getElementById('detail-mgmt-grid');
+
+    if (stock.boardOfDirectors && stock.boardOfDirectors.length) {
+      boardGrid.innerHTML = stock.boardOfDirectors.map(b => `
+        <div class="leader-item">
+          <div class="leader-name">${b.name}</div>
+          <div class="leader-role">${b.role}</div>
+        </div>
+      `).join('');
+    } else {
+      boardGrid.innerHTML = `<div class="leader-item"><div class="leader-name">Institutional Board</div><div class="leader-role">SEBI Public Interest Directors</div></div>`;
+    }
+
+    if (stock.seniorManagement && stock.seniorManagement.length) {
+      mgmtGrid.innerHTML = stock.seniorManagement.map(m => `
+        <div class="leader-item">
+          <div class="leader-name">${m.name}</div>
+          <div class="leader-role">${m.role}</div>
+        </div>
+      `).join('');
+    } else {
+      mgmtGrid.innerHTML = `<div class="leader-item"><div class="leader-name">Executive Committee</div><div class="leader-role">Managing Director & Key Personnel</div></div>`;
+    }
+
+    // Specific FAQs
+    const faqsWrap = document.getElementById('detail-faqs-wrap');
+    if (stock.faqs && stock.faqs.length) {
+      faqsWrap.innerHTML = stock.faqs.map((f, idx) => `
+        <div class="faq-card-item ${idx === 0 ? 'active' : ''}">
+          <button class="faq-card-trigger" onclick="this.parentElement.classList.toggle('active')">
+            <span>${f.question}</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-card-body" style="white-space: pre-line;">${f.answer}</div>
+        </div>
+ 
 })();
