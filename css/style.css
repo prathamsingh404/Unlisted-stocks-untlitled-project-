@@ -1009,4 +1009,53 @@ body {
 }
 
 /* 7. Leadership */
-.leadership-g
+.leadership-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.leader-item {
+  padding: 16px 20px;
+  background: var(--bg-subtle);
+  border-radius: 16px;
+  border: 1px solid var(--border-card);
+}
+
+.leader-name {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--text-main);
+}
+
+.leader-role {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+/* ==========================================================================
+   Sticky Buy Panel (Right Column Terminal Widget)
+   ========================================================================== */
+.sticky-buy-panel {
+  position: sticky;
+  top: 108px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.buy-widget-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: 28px;
+  padding: 34px 30px;
+  box-shadow: var(--shadow-card);
+}
+
+.buy-widget-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 24px;
+  line-hei
