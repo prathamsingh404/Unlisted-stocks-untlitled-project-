@@ -89,5 +89,29 @@ const UNLISTED_STOCKS = [
     weaknesses: [
       { title: "Financial Losses", desc: "Decrease in revenue and continued operational losses. Dependence on limited revenue streams like transaction and listing fees, which have been declining." },
       { title: "Market Share Challenges", desc: "Struggles to establish significant market presence amidst fierce competition from NSE and BSE." },
-      { title: "Brand Visibility", d
+      { title: "Brand Visibility", desc: "Lesser-known brand compared to dominant players, limiting reach among retail and institutional investors." }
+    ],
+
+    // Corporate Governance
+    boardOfDirectors: [
+      { name: "Dinesh C Patwari", role: "Chairman & Public Interest Director" },
+      { name: "Ashok Kumar Dogra", role: "Public Interest Director" },
+      { name: "Rakesh Kumar Srivastava", role: "Public Interest Director" },
+      { name: "Manoj Kunkalienkar", role: "Non-Independent Director" },
+      { name: "Latika S. Kundu", role: "Managing Director & CEO" }
+    ],
+    seniorManagement: [
+      { name: "Latika S Kundu", role: "Managing Director & CEO" },
+      { name: "Saket Bhansali", role: "Chief Financial Officer" },
+      { name: "P K Ramesh", role: "Chief Regulatory Officer & Compliance Officer" },
+      { name: "Isidorio Fernandes", role: "Chief Technology Officer" },
+      { name: "Jagdish Asodekar", role: "Chief Information Security Officer" },
+      { name: "Durgesh Kadam", role: "Head - Legal and Company Secretary" }
+    ],
+
+    // Specific FAQs
+    faqs: [
+      {
+        question: "Is there any lock in period for MSEI unlisted shares?",
+        answer: "The lock-in period for Metropolitan Stock Exchange of India Ltd Unlisted Shares differs based on investor category under SEBI regulations:\n• Venture Capital Funds (VCFs) and FVCIs: 6 months from date of acquisition.\n• Alternative Invest
 ];
