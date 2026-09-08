@@ -379,5 +379,84 @@
           </button>
           <div class="faq-card-body" style="white-space: pre-line;">${f.answer}</div>
         </div>
- 
+      `).join('');
+    }
+
+    // Right Sticky Buy Widget
+    document.getElementById('widget-company-name').textContent = stock.name;
+    document.getElementById('widget-price-unit').textContent = `₹${stock.price.toFixed(2)}`;
+    document.getElementById('widget-settlement').textContent = stock.settlementPeriod || '18 Sep 2026';
+    document.getElementById('widget-min-units').textContent = stock.minUnits;
+    document.getElementById('widget-discount-text').textContent = `Grab this opportunity at ₹${(stock.price * 0.984).toFixed(2)}`;
+    updateWidgetValues();
+
+    // Switch Page View to Stock Detail
+    el.pageViews.forEach(view => {
+      view.classList.toggle('active', view.id === 'stock-detail-view');
+    });
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  // =========================================================================
+  // Financial Table Switcher (P&L vs Balance Sheet)
+  // =========================================================================
+  window.switchFinTab = function (type) {
+    state.currentFinTab = type;
+    document.getElementById('btn-tab-pnl').classList.toggle('active', type === 'pnl');
+    document.getElementById('btn-tab-bs').classList.toggle('active', type === 'bs');
+    renderFinancialTable();
+  };
+
+  function renderFinancialTable() {
+    const stock = state.currentDetailStock || state.stocks[0];
+    const tableEl = document.getElementById('detail-fin-table');
+    if (!tableEl) return;
+
+    const years = stock.financialYears || ["FY2025", "FY2024", "FY2023", "FY2022", "FY2021", "FY2020", "FY2019"];
+    const rows = state.currentFinTab === 'pnl' ? stock.profitAndLoss : stock.balanceSheet;
+
+    if (!rows || !rows.length) {
+      tableEl.innerHTML = `<tr><td style="padding: 24px; text-align: center;">No audited metrics available for this period.</td></tr>`;
+      return;
+    }
+
+    tableEl.innerHTML = `
+      <thead>
+        <tr>
+          <th>Metric</th>
+          ${years.map(y => `<th>${y}</th>`).join('')}
+        </tr>
+      </thead>
+      <tbody>
+        ${rows.map(r => `
+          <tr>
+            <td>${r.metric}</td>
+            ${r.vals.map(v => {
+              const isNegative = v.startsWith('-');
+              return `<td style="${isNegative ? 'color: #DC2626;' : ''}">${v}</td>`;
+            }).join('')}
+          </tr>
+        `).join('')}
+      </tbody>
+    `;
+  }
+
+  // =========================================================================
+  // Right Buy Widget Stepper
+  // =========================================================================
+  window.adjustWidgetQty = function (delta) {
+    const stock = state.currentDetailStock || state.stocks[0];
+    const minUnits = stock.minUnits || 10;
+    const newQty = state.widgetUnits + (delta * minUnits);
+
+    if (newQty >= minUnits) {
+      state.widgetUnits = newQty;
+      updateWidgetValues();
+    }
+  };
+
+  function updateWidgetValues() {
+    const stock = state.currentDetailStock || state.stocks[0];
+    const units = state.widgetUn
 })();
