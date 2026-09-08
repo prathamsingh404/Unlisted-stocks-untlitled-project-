@@ -1,0 +1,12 @@
+/* ==========================================================================
+   Minimalist Components & Utility Classes
+   ========================================================================== */
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.text-green {
+  color: var(--green);
+}
+
