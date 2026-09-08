@@ -626,3 +626,54 @@ body {
   font-weight: 800;
   box-shadow: var(--shadow-card);
   flex-shrink: 0;
+}
+
+.stock-hero-info h1 {
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: var(--text-main);
+  line-height: 1.25;
+}
+
+.stock-hero-sub {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  margin-top: 4px;
+}
+
+/* Modern KYC Benefit Ribbon */
+.kyc-cashback-bar {
+  background: var(--obsidian);
+  color: #FFFFFF;
+  border-radius: 16px;
+  padding: 16px 24px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  margin-bottom: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-left: 6px solid var(--accent-lime);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.kyc-cashback-bar a {
+  color: var(--accent-lime);
+  text-decoration: underline;
+  font-weight: 700;
+  margin-left: 6px;
+}
+
+[data-theme="dark"] .kyc-cashback-bar {
+  background: var(--bg-card);
+  border-color: var(--border-card);
+  border-left-color: var(--accent-lime);
+}
+
+/* Two Column Layout */
+.detail-layout-grid {
+  display: grid;
+  grid-template-columns: 1fr 390px;
+  gap: 40px;
+  al
