@@ -158,5 +158,55 @@
               <!-- Timeframe Selector -->
               <div class="chart-timeframes">
                 <button class="timeframe-pill" onclick="window.setTimeframe('1M')">1 M</button>
-                <button class="timeframe-pill"
+                <button class="timeframe-pill" onclick="window.setTimeframe('3M')">3 M</button>
+                <button class="timeframe-pill active" onclick="window.setTimeframe('1Y')">1 Y</button>
+                <button class="timeframe-pill" onclick="window.setTimeframe('2Y')">2 Y</button>
+                <button class="timeframe-pill" onclick="window.setTimeframe('3Y')">3 Y</button>
+                <button class="timeframe-pill" onclick="window.setTimeframe('All')">All</button>
+              </div>
+            </div>
+
+            <!-- 2. Sticky Section Nav Tabs -->
+            <div class="detail-section-nav">
+              <button class="section-nav-link active" onclick="window.scrollToSection('sec-fundamentals')">Fundamentals</button>
+              <button class="section-nav-link" onclick="window.scrollToSection('sec-financials')">Key Financials</button>
+              <button class="section-nav-link" onclick="window.scrollToSection('sec-shareholding')">Shareholding</button>
+              <button class="section-nav-link" onclick="window.scrollToSection('sec-swot')">Strengths & Weaknesses</button>
+              <button class="section-nav-link" onclick="window.scrollToSection('sec-about')">About Co.</button>
+              <button class="section-nav-link" onclick="window.scrollToSection('sec-faqs')">FAQs</button>
+            </div>
+
+            <!-- 3. Fundamentals Card -->
+            <div class="detail-section-card" id="sec-fundamentals">
+              <h2 class="detail-section-title">Fundamentals</h2>
+              <div class="fundamentals-grid" id="detail-fundamentals-grid">
+                <!-- Injected dynamically by app.js -->
+              </div>
+            </div>
+
+            <!-- 4. Key Financials Card (Audited FY19 to FY25 Tables) -->
+            <div class="detail-section-card" id="sec-financials">
+              <h2 class="detail-section-title">Key Financials</h2>
+              <div class="fin-tabs-bar">
+                <button class="fin-tab-btn active" id="btn-tab-pnl" onclick="window.switchFinTab('pnl')">Profit & Loss</button>
+                <button class="fin-tab-btn" id="btn-tab-bs" onclick="window.switchFinTab('bs')">Company Financials</button>
+              </div>
+              <div class="table-responsive-wrap">
+                <table class="spacious-fin-table" id="detail-fin-table">
+                  <!-- Injected dynamically by app.js -->
+                </table>
+              </div>
+            </div>
+
+            <!-- 5. Shareholding Pattern -->
+            <div class="detail-section-card" id="sec-shareholding">
+              <h2 class="detail-section-title">Shareholding Pattern</h2>
+              <div class="shareholding-bar-wrap">
+                <div class="shareholding-bar" id="detail-shareholding-bar">
+                  <!-- Injected dynamically by app.js -->
+                </div>
+                <div class="shareholding-legend" id="detail-shareholding-legend">
+                  <!-- Injected dynamically by app.js -->
+                </div>
+              </d
 </div></section></main></body></html>
