@@ -159,5 +159,70 @@
 
     if (state.filteredStocks.length === 0) {
       el.stocksGrid.innerHTML = `
-        <div style="grid-column: 1 / -1; text-align:
+        <div style="grid-column: 1 / -1; text-align: center; padding: 64px 20px; color: var(--text-muted);">
+          <div style="font-size: 1.125rem; font-weight: 600; color: var(--text-main); margin-bottom: 6px;">No stocks found</div>
+          <p style="font-size: 0.9375rem;">Try switching to 'All Stocks' or adjusting your search term.</p>
+        </div>
+      `;
+      return;
+    }
+
+    el.stocksGrid.innerHTML = state.filteredStocks.map(stock => {
+      const isRange = stock.priceRange.includes('-');
+      const priceLabel = isRange ? 'Price Range :' : 'Price per share';
+
+      return `
+        <div class="unlisted-card" onclick="window.openStockDetail('${stock.id}')">
+          <div>
+            <div class="card-header-row">
+              <div class="card-logo-box" style="background-color: ${stock.logoColor}; border: 1px solid ${stock.logoBorder}; color: ${stock.logoTextColor};">
+                ${stock.logoText}
+              </div>
+              <div class="card-title-group">
+                <h3 class="card-company-name" title="${stock.name}">${stock.shortName}</h3>
+                <span class="card-sector-name">${stock.sector}</span>
+              </div>
+            </div>
+
+            <p class="card-description-text">
+              ${stock.description.slice(0, 58)}...
+              <span class="show-more-link" onclick="event.stopPropagation(); window.openStockDetail('${stock.id}')">show more</span>
+            </p>
+
+            <div class="card-divider-dotted"></div>
+
+            <div class="card-data-grid">
+              <div class="data-cell">
+                <span class="data-cell-label">${priceLabel}</span>
+                <span class="data-cell-val">${stock.priceRange}</span>
+              </div>
+              <div class="data-cell">
+                <span class="data-cell-label">Minimum Units</span>
+                <span class="data-cell-val">${stock.minUnits}</span>
+              </div>
+              <div class="data-cell">
+                <span class="data-cell-label">Market Cap</span>
+                <span class="data-cell-val">${stock.marketCap}</span>
+              </div>
+              <div class="data-cell">
+                <span class="data-cell-label">P/E(x)</span>
+                <span class="data-cell-val">${stock.peRatio}</span>
+              </div>
+            </div>
+          </div>
+
+          <button class="btn-view-details" onclick="event.stopPropagation(); window.openStockDetail('${stock.id}')">
+            <span>View Details</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+        </div>
+      `;
+    }).join('');
+  }
+
+  // =========================================================================
+  // Open Stock Detail Page (Matching Screenshot 2 & User Provided Data)
+  // =========================================================================
+  window.openStockDetail = function (stockId) {
+    let stock = state.stocks.find(s => s.id 
 })();
