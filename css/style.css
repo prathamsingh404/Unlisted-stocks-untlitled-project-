@@ -11,4 +11,34 @@
   --bg-main: #F4F6F0;
   --bg-card: #FFFFFF;
   --bg-subtle: #EDF1E7;
-  
+  --bg-pill: #E2E8DC;
+  --border-card: #E2E6DA;
+  --border-subtle: #EBF0E4;
+  --border-dotted: #CBD5E1;
+
+  --text-main: #111827;
+  --text-muted: #5E6D55;
+  --text-light: #8E9C85;
+
+  /* Signature QorTrade Accents */
+  --accent-lime: #B8F228;
+  --accent-lime-hover: #A6E01C;
+  --accent-lime-subtle: #F2FCDA;
+  --accent-lime-glow: rgba(184, 242, 40, 0.45);
+  --accent-lime-text: #0F172A;
+
+  --obsidian: #111827;
+  --obsidian-hover: #1F2937;
+  --obsidian-light: #374151;
+
+  --green: #10B981;
+  --green-subtle: #ECFDF5;
+  --red: #EF4444;
+  --red-subtle: #FEF2F2;
+
+  --font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  --radius-card: 24px;
+  --radius-sm: 12px;
+  --radius-full: 9999px
