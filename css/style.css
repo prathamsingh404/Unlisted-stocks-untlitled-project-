@@ -889,4 +889,57 @@ body {
 [data-theme="dark"] .fin-tab-btn.active {
   background: var(--accent-lime);
   color: #0B0E14;
-  border-color: 
+  border-color: var(--accent-lime);
+}
+
+.table-responsive-wrap {
+  overflow-x: auto;
+  border-radius: 16px;
+  border: 1px solid var(--border-card);
+}
+
+.spacious-fin-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: right;
+  font-size: 0.875rem;
+}
+
+.spacious-fin-table th, .spacious-fin-table td {
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--border-card);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.spacious-fin-table th {
+  background: var(--bg-subtle);
+  color: var(--text-muted);
+  font-weight: 700;
+  font-size: 0.8125rem;
+}
+
+.spacious-fin-table th:first-child, .spacious-fin-table td:first-child {
+  text-align: left;
+  font-weight: 600;
+  color: var(--text-main);
+  position: sticky;
+  left: 0;
+  background: var(--bg-card);
+  z-index: 1;
+}
+
+.spacious-fin-table th:first-child {
+  background: var(--bg-subtle);
+}
+
+.spacious-fin-table tr:hover td {
+  background: var(--bg-subtle);
+}
+
+/* 5. Shareholding */
+.shareholding-bar-wrap {
+  margin-top: 16px;
+}
+
+.sharehold
