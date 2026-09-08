@@ -1,0 +1,14 @@
+/* ==========================================================================
+   QorTrade - Institutional Unlisted & Pre-IPO Equities Desk
+   Ultra-Modern Fintech Aesthetic Inspired by QorTrade / Linear / Ramp
+   Color System: Warm Chalk Sage (#F4F6F0), Pure White, Electric Lime (#B8F228), Deep Obsidian (#111827)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+
+:root {
+  /* Light Mode Palette */
+  --bg-main: #F4F6F0;
+  --bg-card: #FFFFFF;
+  --bg-subtle: #EDF1E7;
+  
