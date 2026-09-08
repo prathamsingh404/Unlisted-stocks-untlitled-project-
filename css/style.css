@@ -41,4 +41,45 @@
 
   --radius-card: 24px;
   --radius-sm: 12px;
-  --radius-full: 9999px
+  --radius-full: 9999px;
+
+  --shadow-card: 0 4px 20px -2px rgba(17, 24, 39, 0.04), 0 2px 6px -1px rgba(17, 24, 39, 0.02);
+  --shadow-card-hover: 0 16px 36px -4px rgba(17, 24, 39, 0.08), 0 4px 12px -2px rgba(17, 24, 39, 0.04);
+}
+
+[data-theme="dark"] {
+  --bg-main: #0B0E14;
+  --bg-card: #131822;
+  --bg-subtle: #192130;
+  --bg-pill: #1E283A;
+  --border-card: #202A3C;
+  --border-subtle: #182232;
+  --border-dotted: #334155;
+
+  --text-main: #F8FAFC;
+  --text-muted: #94A3B8;
+  --text-light: #64748B;
+
+  --accent-lime: #C4F835;
+  --accent-lime-hover: #D5FF55;
+  --accent-lime-subtle: rgba(196, 248, 53, 0.15);
+  --accent-lime-glow: rgba(196, 248, 53, 0.3);
+  --accent-lime-text: #0B0E14;
+
+  --obsidian: #F8FAFC;
+  --obsidian-hover: #E2E8F0;
+  --obsidian-light: #CBD5E1;
+
+  --shadow-card: 0 6px 24px rgba(0, 0, 0, 0.4);
+  --shadow-card-hover: 0 18px 40px rgba(0, 0, 0, 0.6);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--
