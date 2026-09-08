@@ -62,5 +62,24 @@ const UNLISTED_STOCKS = [
       { metric: "Total Non Current Liabilities", vals: ["30.11", "108.08", "113.11", "124.63", "126.23", "22.25", "19.05"] },
       { metric: "Borrowings (Current)", vals: ["0.00", "24.15", "0", "0", "0", "0", "0"] },
       { metric: "Other Current Liabilities", vals: ["17.03", "68.65", "66.44", "61.01", "51.11", "35.72", "37.35"] },
-      { metric: "Total Current Liabilities", vals: ["17
+      { metric: "Total Current Liabilities", vals: ["17.03", "92.80", "66.44", "61.01", "51.11", "35.72", "37.35"] },
+      { metric: "Fixed Assets (incl. WIP)", vals: ["8.70", "42.79", "28.87", "27.44", "24.25", "14.14", "11.53"] },
+      { metric: "Other Non Current Assets", vals: ["176.64", "109.28", "250.62", "79.45", "106.47", "82.58", "76.09"] },
+      { metric: "Total Non Current Assets", vals: ["185.34", "152.07", "279.49", "106.89", "130.72", "96.72", "87.62"] },
+      { metric: "Trade Receivables", vals: ["0.85", "1.34", "1.17", "1.60", "4.21", "1.30", "2.61"] },
+      { metric: "Cash & Cash Equivalents", vals: ["95.74", "379.61", "160.12", "247.93", "230.84", "92.17", "14.76"] },
+      { metric: "Other Current Assets", vals: ["161.93", "62.29", "77.42", "135.15", "86.00", "109.19", "144.20"] },
+      { metric: "Total Current Assets", vals: ["258.52", "443.24", "238.71", "384.68", "321.05", "202.66", "161.57"] },
+      { metric: "Total Assets", vals: ["443.86", "595.31", "518.20", "491.57", "451.77", "299.38", "249.19"] }
+    ],
+
+    // Shareholding Pattern
+    shareholding: [
+      { holder: "Multi Commodity Exchange Of India Ltd", percent: 6.90 },
+      { holder: "Others", percent: 93.10 }
+    ],
+
+    // Strengths & Weaknesses
+    strengths: [
+      { title: "Technological Infrastructure", desc: "Fault-tolerant trading systems with real-time data replication across primary, near, and disaster recovery sites ensure high 
 ];
