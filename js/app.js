@@ -224,5 +224,85 @@
   // Open Stock Detail Page (Matching Screenshot 2 & User Provided Data)
   // =========================================================================
   window.openStockDetail = function (stockId) {
-    let stock = state.stocks.find(s => s.id 
+    let stock = state.stocks.find(s => s.id === stockId);
+    if (!stock) stock = state.stocks[0];
+
+    state.currentDetailStock = stock;
+    window.currentDetailStockId = stock.id;
+    state.widgetUnits = stock.minUnits;
+
+    // Breadcrumb & Hero Header Identity
+    const breadcrumbEl = document.getElementById('detail-breadcrumb-name');
+    if (breadcrumbEl) breadcrumbEl.textContent = stock.name;
+
+    const heroLogo = document.getElementById('detail-hero-logo');
+    if (heroLogo) {
+      heroLogo.textContent = stock.logoText;
+      heroLogo.style.backgroundColor = stock.logoColor;
+      heroLogo.style.color = stock.logoTextColor;
+      heroLogo.style.border = '1px solid ' + (stock.logoBorder || '#E2E6DA');
+    }
+
+    const titleEl = document.getElementById('detail-company-title');
+    if (titleEl) titleEl.textContent = stock.name;
+
+    const subEl = document.getElementById('detail-company-sub');
+    if (subEl) subEl.textContent = `${stock.name} - Unlisted Shares`;
+
+    // Chart Card
+    document.getElementById('detail-chart-price').textContent = `₹${stock.price.toFixed(2)}`;
+    document.getElementById('detail-chart-gain').textContent = stock.priceChange1Y || '+2.15 (52.44%) 1 Y';
+    document.getElementById('detail-chart-badge').textContent = stock.tag || 'Top Gainer';
+
+    // Fundamentals Grid
+    const fundGrid = document.getElementById('detail-fundamentals-grid');
+    fundGrid.innerHTML = `
+      <div class="fund-item">
+        <span class="fund-label">Current Price</span>
+        <span class="fund-value">₹${stock.price.toFixed(2)}</span>
+      </div>
+      <div class="fund-item">
+        <span class="fund-label">Market Cap</span>
+        <span class="fund-value">${stock.marketCap}</span>
+      </div>
+      <div class="fund-item">
+        <span class="fund-label">ISIN</span>
+        <span class="fund-value" style="font-family: var(--font-mono); font-size: 1rem;">${stock.isin || 'INE312K01010'}</span>
+      </div>
+      <div class="fund-item">
+        <span class="fund-label">Face Value</span>
+        <span class="fund-value">${stock.faceValue || '₹1'}</span>
+      </div>
+      <div class="fund-item">
+        <span class="fund-label">EPS</span>
+        <span class="fund-value">${stock.eps || '₹-0.06'}</span>
+      </div>
+      <div class="fund-item">
+        <span class="fund-label">P/B Ratio</span>
+        <span class="fund-value">${stock.pbRatio || '15.63'}</span>
+      </div>
+      <div class="fund-item">
+        <span class="fund-label">Book Value</span>
+        <span class="fund-value">${stock.bookValue || '₹0.40'}</span>
+      </div>
+      <div class="fund-item">
+        <span class="fund-label">Debt / Equity Ratio</span>
+        <span class="fund-value">${stock.debtEquity || '0'}</span>
+      </div>
+    `;
+
+    // Render Financial Tables
+    renderFinancialTable();
+
+    // Shareholding Pattern (Matching QorTrade Electric Lime & Obsidian)
+    const barContainer = document.getElementById('detail-shareholding-bar');
+    const legendContainer = document.getElementById('detail-shareholding-legend');
+    if (stock.shareholding && stock.shareholding.length) {
+      barContainer.innerHTML = stock.shareholding.map((s, idx) => `
+        <div style="width: ${s.percent}%; background: ${idx === 0 ? '#111827' : '#B8F228'};" title="${s.holder}: ${s.percent}%"></div>
+      `).join('');
+
+      legendContainer.innerHTML = stock.shareholding.map((s, idx) => `
+        <div class="legend-item">
+          <span class="legend-color-dot" style="background: ${idx === 0 ? '#111827' : '#B8F228'}
 })();
