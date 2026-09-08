@@ -730,4 +730,58 @@ body {
 }
 
 .top-gainer-badge {
-  background: var(--accent-
+  background: var(--accent-lime);
+  color: #0F172A;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  box-shadow: 0 2px 8px var(--accent-lime-glow);
+}
+
+.interactive-chart-svg {
+  width: 100%;
+  height: 240px;
+  margin: 16px 0 24px 0;
+  overflow: visible;
+}
+
+.chart-timeframes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  padding-top: 8px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.timeframe-pill {
+  background: none;
+  border: none;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  padding: 6px 16px;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.timeframe-pill:hover {
+  color: var(--text-main);
+}
+
+.timeframe-pill.active {
+  background: var(--obsidian);
+  color: #FFFFFF;
+}
+
+[data-theme="dark"] .timeframe-pill.active {
+  background: var(--accent-lime);
+  color: #0B0E14;
+}
+
+/* 2. Detail Section Navigation Bar */
+.detail-section-nav {
+  display: flex;
+  
