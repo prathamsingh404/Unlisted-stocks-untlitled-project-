@@ -164,5 +164,68 @@ const UNLISTED_STOCKS = [
     ],
     balanceSheet: [
       { metric: "Total Equity", vals: ["280.40", "210.10", "165.20"] },
-      { metric: "Total Assets", vals: ["1,183.41", "890.50", "640.20"] 
+      { metric: "Total Assets", vals: ["1,183.41", "890.50", "640.20"] }
+    ],
+    shareholding: [{ holder: "Promoter Group", percent: 74.5 }, { holder: "Public / HNIs", percent: 25.5 }],
+    strengths: [{ title: "Prudent Asset Quality", desc: "Gross NPA maintained under 1.8% across northern and western hubs." }],
+    weaknesses: [{ title: "Cost of Funds", desc: "Non-deposit taking NBFC structure depends on bank credit lines." }],
+    boardOfDirectors: [{ name: "Kapil Garg", role: "Managing Director" }],
+    seniorManagement: [{ name: "Rahul Sharma", role: "CFO" }],
+    faqs: [
+      { question: "What is the lot size for Hindon Mercantile?", answer: "Minimum lot size is 5 units with direct Demat credit." }
+    ]
+  },
+  {
+    id: "csk",
+    name: "Chennai Super Kings Cricket Ltd.",
+    shortName: "Chennai Super Kings Crick...",
+    symbol: "CSK",
+    sector: "Sports",
+    category: "live",
+    priceRange: "₹261 - ₹266",
+    price: 265,
+    minUnits: 12,
+    marketCap: "₹10,092.71 Cr",
+    peRatio: "65.20",
+    isin: "INE003C01018",
+    faceValue: "₹0.10",
+    eps: "₹5.10",
+    pbRatio: "18.4",
+    bookValue: "₹14.40",
+    debtEquity: "0",
+    settlementPeriod: "T+1 Demat",
+    upcomingIPO: "Pre-IPO Cult Brand",
+    description: "Chennai Super Kings (CSK) is one of the most successful 5-time champion IPL franchises with diversified global media rights, stadium revenue, and international cricket academy operations.",
+    logoText: "CSK",
+    logoColor: "#FFD000",
+    logoBorder: "#FFD000",
+    logoTextColor: "#000000",
+    priceChange1Y: "+48.00 (22.12%) 1 Y",
+    tag: "Cult Brand",
+    financialYears: ["FY2024", "FY2023", "FY2022"],
+    profitAndLoss: [
+      { metric: "Revenue from Operations", vals: ["676.00", "471.00", "349.00"] },
+      { metric: "Operating Profit", vals: ["285.00", "198.00", "142.00"] },
+      { metric: "Profit After Tax", vals: ["229.00", "165.00", "118.00"] }
+    ],
+    balanceSheet: [
+      { metric: "Total Equity", vals: ["540.00", "380.00", "260.00"] },
+      { metric: "Cash & Cash Equivalents", vals: ["320.00", "190.00", "110.00"] },
+      { metric: "Total Assets", vals: ["1,240.00", "890.00", "610.00"] }
+    ],
+    shareholding: [{ holder: "India Cements Ltd", percent: 30.1 }, { holder: "LIC & Financial Institutions", percent: 12.4 }, { holder: "Public & HNIs", percent: 57.5 }],
+    strengths: [{ title: "Global Sports Franchise", desc: "Long-term media rights contract guaranteed through BCCI/JioStar." }],
+    weaknesses: [{ title: "Tournament Dependency", desc: "Significant revenue generated during the annual IPL season window." }],
+    boardOfDirectors: [{ name: "K.S. Viswanathan", role: "CEO" }],
+    seniorManagement: [{ name: "Rakesh Singh", role: "COO" }],
+    faqs: [
+      { question: "Can retail investors buy CSK unlisted shares?", answer: "Yes, shares are available starting from 12 units and get credited to your CDSL/NSDL Demat." }
+    ]
+  },
+  {
+    id: "nse",
+    name: "National Stock Exchange of India (NSE)",
+    shortName: "National Stock Exchange",
+    symbol: "NSE",
+    secto
 ];
