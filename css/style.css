@@ -942,4 +942,71 @@ body {
   margin-top: 16px;
 }
 
-.sharehold
+.shareholding-bar {
+  display: flex;
+  height: 24px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 18px;
+}
+
+.shareholding-legend {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9375rem;
+}
+
+.legend-color-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 4px;
+}
+
+/* 6. Strengths & Weaknesses */
+.swot-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+
+.swot-col h3 {
+  font-size: 1.15rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.swot-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.swot-entry {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-card);
+  border-radius: 18px;
+  padding: 18px 22px;
+}
+
+.swot-entry-title {
+  font-weight: 700;
+  font-size: 0.9375rem;
+  color: var(--text-main);
+  margin-bottom: 6px;
+}
+
+.swot-entry-desc {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* 7. Leadership */
+.leadership-g
