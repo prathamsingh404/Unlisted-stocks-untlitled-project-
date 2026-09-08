@@ -784,4 +784,53 @@ body {
 /* 2. Detail Section Navigation Bar */
 .detail-section-nav {
   display: flex;
-  
+  gap: 12px;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-card);
+  padding: 6px;
+  border-radius: var(--radius-full);
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.section-nav-link {
+  background: none;
+  border: none;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  padding: 8px 20px;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.section-nav-link:hover {
+  color: var(--text-main);
+}
+
+.section-nav-link.active {
+  background: var(--bg-card);
+  color: var(--text-main);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="dark"] .section-nav-link.active {
+  background: var(--accent-lime);
+  color: #0B0E14;
+}
+
+/* 3. Section Cards */
+.detail-section-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: 28px;
+  padding: 38px;
+  box-shadow: var(--shadow-card);
+}
+
+.detail-section-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  margin-bottom: 24px;
+  color:
