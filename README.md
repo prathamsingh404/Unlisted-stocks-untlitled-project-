@@ -11,7 +11,7 @@
 ---
 
 ## 📌 Executive Summary
-
+ 
 **QorTrade** is an institutional-grade unlisted equity desk and intelligence terminal designed to provide qualified retail investors, High-Net-Worth Individuals (HNIs), and family offices with direct access to pre-IPO shares, unicorn secondary blocks, and late-stage private equity placements in India.
 
 Every transaction on QorTrade is executed through **RBI-regulated scheduled bank escrow accounts** and verified off-market **CDSL/NSDL depository slips (DIS/e-DIS)**, ensuring zero counterparty default risk and verified delivery into existing retail Demat accounts.
